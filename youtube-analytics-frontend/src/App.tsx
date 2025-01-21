@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ChannelSearch } from "./components/ChannelSearch";
 import { ChannelDashboard } from "./components/ChannelDashboard";
+import ChannelComparison from "./components/ChannelComparison";
 import { ChannelBasic } from "./lib/api";
 import { Button } from "./components/ui/button";
 
@@ -46,17 +48,33 @@ const App = () => {
         </Button>
       </div>
 
-      <main className="container mx-auto py-4">
-        {selectedChannel ? (
-          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <ChannelDashboard channelId={selectedChannel.id} />
-          </div>
-        ) : (
-          <div className="animate-in fade-in slide-in-from-top-4 duration-500">
-            <ChannelSearch onChannelSelect={setSelectedChannel} />
-          </div>
-        )}
-      </main>
+      <Router>
+        <nav className="fixed top-4 left-4 z-50 flex gap-2">
+          <Button asChild variant="ghost">
+            <Link to="/">Home</Link>
+          </Button>
+          <Button asChild variant="ghost">
+            <Link to="/comparison">Comparison</Link>
+          </Button>
+        </nav>
+        
+        <main className="container mx-auto py-4">
+          <Routes>
+            <Route path="/" element={
+              selectedChannel ? (
+                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <ChannelDashboard channelId={selectedChannel.id} />
+                </div>
+              ) : (
+                <div className="animate-in fade-in slide-in-from-top-4 duration-500">
+                  <ChannelSearch onChannelSelect={setSelectedChannel} />
+                </div>
+              )
+            } />
+            <Route path="/comparison" element={<ChannelComparison />} />
+          </Routes>
+        </main>
+      </Router>
     </div>
   );
 };

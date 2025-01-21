@@ -143,3 +143,13 @@ export const getVideoStatistics = async (videoId: string): Promise<VideoStatisti
     throw error;
   }
 };
+
+export interface Channel {
+  id: string;
+  title: string;
+  description: string;
+  thumbnailUrl: string;
+  subscribers: number;
+  views: number;
+  videos: number;
+}
