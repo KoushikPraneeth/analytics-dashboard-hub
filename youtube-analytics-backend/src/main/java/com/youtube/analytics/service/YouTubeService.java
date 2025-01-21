@@ -84,6 +84,7 @@ public class YouTubeService {
     public Video getVideoStatistics(String videoId) throws IOException {
         YouTube.Videos.List request = youTube.videos()
             .list("statistics,snippet,contentDetails")
+            .setFields("items(id,snippet(title,description,publishedAt,thumbnails(maxres,high)),statistics(viewCount,likeCount,commentCount),contentDetails(duration))")
             .setId(videoId)
             .setKey(apiKey);
 

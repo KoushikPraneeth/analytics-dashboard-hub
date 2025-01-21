@@ -29,7 +29,11 @@ public class YouTubeController {
                 channel.put("id", item.getId().getChannelId());
                 channel.put("title", item.getSnippet().getTitle());
                 channel.put("description", item.getSnippet().getDescription());
-                channel.put("thumbnailUrl", item.getSnippet().getThumbnails().getDefault().getUrl());
+                channel.put("thumbnailUrl", 
+                    item.getSnippet().getThumbnails().getMaxres() != null ? item.getSnippet().getThumbnails().getMaxres().getUrl() :
+                    item.getSnippet().getThumbnails().getHigh() != null ? item.getSnippet().getThumbnails().getHigh().getUrl() :
+                    item.getSnippet().getThumbnails().getMedium() != null ? item.getSnippet().getThumbnails().getMedium().getUrl() :
+                    item.getSnippet().getThumbnails().getDefault().getUrl());
                 channels.add(channel);
             });
 
@@ -66,7 +70,11 @@ public class YouTubeController {
                 details.put("title", channel.getSnippet().getTitle());
                 details.put("description", channel.getSnippet().getDescription());
                 details.put("publishedAt", channel.getSnippet().getPublishedAt().toString());
-                details.put("thumbnailUrl", channel.getSnippet().getThumbnails().getDefault().getUrl());
+                details.put("thumbnailUrl", 
+                    channel.getSnippet().getThumbnails().getMaxres() != null ? channel.getSnippet().getThumbnails().getMaxres().getUrl() :
+                    channel.getSnippet().getThumbnails().getHigh() != null ? channel.getSnippet().getThumbnails().getHigh().getUrl() :
+                    channel.getSnippet().getThumbnails().getMedium() != null ? channel.getSnippet().getThumbnails().getMedium().getUrl() :
+                    channel.getSnippet().getThumbnails().getDefault().getUrl());
             } else {
                 details.put("title", "");
                 details.put("description", "");
@@ -106,7 +114,11 @@ public class YouTubeController {
                         videoData.put("title", video.getSnippet().getTitle());
                         videoData.put("description", video.getSnippet().getDescription());
                         videoData.put("publishedAt", video.getSnippet().getPublishedAt().toString());
-                        videoData.put("thumbnailUrl", video.getSnippet().getThumbnails().getDefault().getUrl());
+                        videoData.put("thumbnailUrl", 
+                            video.getSnippet().getThumbnails().getMaxres() != null ? video.getSnippet().getThumbnails().getMaxres().getUrl() :
+                            video.getSnippet().getThumbnails().getHigh() != null ? video.getSnippet().getThumbnails().getHigh().getUrl() :
+                            video.getSnippet().getThumbnails().getMedium() != null ? video.getSnippet().getThumbnails().getMedium().getUrl() :
+                            video.getSnippet().getThumbnails().getDefault().getUrl());
                     }
                     
                     if (video.getStatistics() != null) {
@@ -156,7 +168,11 @@ public class YouTubeController {
                 response.put("title", video.getSnippet().getTitle());
                 response.put("description", video.getSnippet().getDescription());
                 response.put("publishedAt", video.getSnippet().getPublishedAt().toString());
-                response.put("thumbnailUrl", video.getSnippet().getThumbnails().getDefault().getUrl());
+                response.put("thumbnailUrl", 
+                    video.getSnippet().getThumbnails().getMaxres() != null ? video.getSnippet().getThumbnails().getMaxres().getUrl() :
+                    video.getSnippet().getThumbnails().getHigh() != null ? video.getSnippet().getThumbnails().getHigh().getUrl() :
+                    video.getSnippet().getThumbnails().getMedium() != null ? video.getSnippet().getThumbnails().getMedium().getUrl() :
+                    video.getSnippet().getThumbnails().getDefault().getUrl());
             }
             
             if (video.getContentDetails() != null) {

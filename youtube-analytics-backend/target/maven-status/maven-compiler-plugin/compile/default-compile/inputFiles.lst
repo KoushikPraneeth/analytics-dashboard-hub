@@ -1,5 +1,5 @@
-/Users/praneethkoushik/youtube-analytics/youtube-analytics-backend/src/main/java/com/youtube/analytics/config/YouTubeConfig.java
-/Users/praneethkoushik/youtube-analytics/youtube-analytics-backend/src/main/java/com/youtube/analytics/service/YouTubeService.java
-/Users/praneethkoushik/youtube-analytics/youtube-analytics-backend/src/main/java/com/youtube/analytics/controller/YouTubeController.java
-/Users/praneethkoushik/youtube-analytics/youtube-analytics-backend/src/main/java/com/youtube/analytics/config/WebConfig.java
-/Users/praneethkoushik/youtube-analytics/youtube-analytics-backend/src/main/java/com/youtube/analytics/App.java
+/Users/praneethkoushik/analytics-dashboard-hub/youtube-analytics-backend/src/main/java/com/youtube/analytics/config/YouTubeConfig.java
+/Users/praneethkoushik/analytics-dashboard-hub/youtube-analytics-backend/src/main/java/com/youtube/analytics/App.java
+/Users/praneethkoushik/analytics-dashboard-hub/youtube-analytics-backend/src/main/java/com/youtube/analytics/config/WebConfig.java
+/Users/praneethkoushik/analytics-dashboard-hub/youtube-analytics-backend/src/main/java/com/youtube/analytics/controller/YouTubeController.java
+/Users/praneethkoushik/analytics-dashboard-hub/youtube-analytics-backend/src/main/java/com/youtube/analytics/service/YouTubeService.java

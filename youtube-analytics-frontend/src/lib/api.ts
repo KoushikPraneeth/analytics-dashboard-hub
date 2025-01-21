@@ -34,6 +34,7 @@ export interface VideoStatistics {
   likeCount: string;
   commentCount: string;
   duration: string;
+  videoUrl: string;
 }
 
 export interface ChannelVideosResponse {
@@ -99,10 +100,19 @@ export const getVideoStatistics = async (videoId: string): Promise<VideoStatisti
         description: string;
         publishedAt: string;
         thumbnails: {
-          default: {
-            url: string;
-          };
+        default: {
+          url: string;
         };
+        medium: {
+          url: string;
+        };
+        high: {
+          url: string;
+        };
+        maxres: {
+          url: string;
+        };
+      };
       };
       duration: string;
     }>(`${API_BASE_URL}/videos/${videoId}`);
@@ -121,7 +131,11 @@ export const getVideoStatistics = async (videoId: string): Promise<VideoStatisti
       title: video.snippet?.title || '',
       description: video.snippet?.description || '',
       publishedAt: video.snippet?.publishedAt || '',
-      thumbnailUrl: video.snippet?.thumbnails?.default?.url || '',
+      thumbnailUrl: video.snippet?.thumbnails?.maxres?.url || 
+                  video.snippet?.thumbnails?.high?.url || 
+                  video.snippet?.thumbnails?.medium?.url || 
+                  video.snippet?.thumbnails?.default?.url || '',
+      videoUrl: `https://www.youtube.com/watch?v=${video.id}`,
       duration: video.duration || ''
     };
   } catch (error) {

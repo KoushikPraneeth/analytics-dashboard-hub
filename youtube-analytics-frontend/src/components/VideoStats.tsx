@@ -15,6 +15,7 @@ interface VideoStatistics {
   likeCount: string;
   commentCount: string;
   duration: string;
+  videoUrl: string;
 }
 
 export const VideoStats = ({ videoId }: VideoStatsProps) => {
@@ -42,15 +43,22 @@ export const VideoStats = ({ videoId }: VideoStatsProps) => {
   if (!stats) return <div>No data available</div>;
 
   return (
-    <div className="video-stats">
+    <div 
+      className="video-stats cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-lg overflow-hidden bg-white"
+      onClick={() => window.open(stats.videoUrl, '_blank')}
+    >
       <div className="video-thumbnail">
-        <img src={stats.thumbnailUrl} alt={stats.title} />
+        <img 
+          src={stats.thumbnailUrl} 
+          alt={stats.title}
+          className="w-full h-48 object-cover"
+        />
       </div>
-      <div className="video-info">
-        <h2>{stats.title}</h2>
-        <p>{stats.description}</p>
-        <div className="stats-grid">
-          <div className="stat-item">
+      <div className="video-info p-4">
+        <h2 className="text-lg font-semibold mb-2">{stats.title}</h2>
+        <p className="text-sm text-gray-600 mb-4 line-clamp-2">{stats.description}</p>
+        <div className="stats-grid grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="stat-item bg-gray-50 p-2 rounded-lg text-center">
             <span>Views</span>
             <span>{stats.viewCount}</span>
           </div>
