@@ -1,0 +1,6 @@
+com/youtube/analytics/config/WebConfig.class
+com/youtube/analytics/App.class
+com/youtube/analytics/config/YouTubeConfig.class
+com/youtube/analytics/service/YouTubeService.class
+com/youtube/analytics/controller/YouTubeController.class
+com/youtube/analytics/controller/YouTubeController$ErrorResponse.class
