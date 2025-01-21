@@ -1,0 +1,80 @@
+# Dependencies
+*/node_modules
+*/.pnp
+*/.pnp.js
+*/.yarn/install-state.gz
+
+# Testing
+*/coverage
+
+# Production
+*/build
+*/dist
+*/target
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven
+*/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*/application-local.properties
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Frontend specific
+*/dist-ssr
+*/node_modules
+youtube-analytics-frontend/.vite
+youtube-analytics-frontend/*.local
+
+# Backend specific
+youtube-analytics-backend/target/
+youtube-analytics-backend/.settings/
+youtube-analytics-backend/.classpath
+youtube-analytics-backend/.project
+youtube-analytics-backend/.factorypath
+youtube-analytics-backend/bin/
+youtube-analytics-backend/.springBeans
+
+# OS specific
+.DS_Store
+Thumbs.db
