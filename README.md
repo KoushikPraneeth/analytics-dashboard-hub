@@ -1,6 +1,8 @@
 # YouTube Analytics Dashboard
 
 A modern analytics dashboard for YouTube channels built with Spring Boot and React. View channel statistics, video performance, and engagement metrics in a beautiful, responsive interface.
+![image](https://github.com/user-attachments/assets/45cea273-aa08-45df-b043-e00bd6791381)
+
 
 ## Features
 
